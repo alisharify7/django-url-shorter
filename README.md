@@ -8,7 +8,7 @@ simple django url Shorter web app
     
     python -m venv venv
     or 
-    python -m venv venv
+    python3 -m venv venv
 
 
 activate Virtual Enviroment:
@@ -16,6 +16,12 @@ activate Virtual Enviroment:
       ./venv/Scripts/activate
       or 
       source .\venv\Scripts\activate
+
+install dependencies:
+
+        pip install -r requirements.txt
+        or 
+        pip3 install -r requirements.txt
 
 Migrate db and Run server:
 
