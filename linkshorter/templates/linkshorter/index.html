@@ -1,0 +1,68 @@
+{% extends "linkshorter/base.html" %}
+{% load static %}
+
+
+{% block title %}
+    Url Shorter
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'linkshorter/index.css' %}">
+
+{% endblock %}
+
+{% block content %}
+    <section >
+        <div class="container-fluid my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10 col-11">
+                    <h1 class="text-center text-primary fw-bold display-4 mb-4">Url Shorter</h1>
+                </div>
+                <div class="col-lg-8 col-md-10 col-11 bg-white shadow-sm rounded py-4 px-3">
+                    <h3 class="text-center fw-bold fs-3">Paste the URL to be shortened</h3>
+                    <form action="{% url 'generate_short_url_post' %}" method="post">
+                        {% csrf_token %}
+                    <div class="input-group mb-3 shadow-sm my-3">
+                        <input type="text" class="form-control py-3" name="url" placeholder="Https://www.example.com ...">
+                        <button class="btn btn-primary" >Make it Shorter</button>
+                    </div>
+                    </form>
+                    <div class="my-2">
+                        <p class="m-0 text-center text-muted">ShortURL is a free tool to shorten URLs and generate short links</p>
+                        <p class="m-0 text-center text-muted">URL shortener allows to create a shortened link making it easy to share</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-10 col-11 bg-white shadow-sm rounded py-4 px-3 my-3">
+                    <h3 class="text-center text-muted fs-2 mb-4 mt-3">Want More? Try Premium Features!</h3>
+                    <p class="my-3 text-center">
+                        Custom short links, powerful dashboard, detailed analytics, API, UTM builder, QR codes, browser extension, 50+ app integrations and support
+                    </p>
+                    <div class="d-flex justify-content-center align-items-center my-3">
+                        <button class="btn btn-primary px-5 py-2">
+                            Create Account
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-10 col-11 my-3">
+                    <h3 class="text-start text-muted fs-3">Simple and fast URL shortener!</h3>
+                    <p class="my-3 text-start ">
+                        ShortURL allows to shorten long links from <span class="text-primary">Instagram</span>, <span class="text-primary">Facebook</span>, <span class="text-primary">YouTube</span>, <span class="text-primary">Twitter</span>, <span class="text-primary">Linked In</span>, <span class="text-primary">WhatsApp</span>, <span class="text-primary">TikTok</span>, blogs and sites. Just paste the long URL and click the Shorten URL button. On the next page, copy the shortened URL and share it on sites, chat and emails. After shortening the URL, check how many clicks it received.
+                    </p>
+                </div>
+                <div class="col-lg-8 col-md-10 col-11 my-3">
+                    <h3 class="text-start text-muted fs-3">Shorten, share and track</h3>
+                    <p class="my-3 text-start ">
+                        Your shortened URLs can be used in publications, documents, advertisements, blogs, forums, instant messages, and other locations. Track statistics for your business and projects by monitoring the number of hits from your URL with our click counter.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {% include "utils/alert.html" %}
+{% endblock %}
+
+{% block script %}
+{% endblock %}

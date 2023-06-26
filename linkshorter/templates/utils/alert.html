@@ -1,0 +1,16 @@
+{% if alert %}
+    <div class="alert p-3 m-2 alert-dismissible show fade alert-{{category}} d-flex flex-column position-fixed top-0 end-0 m-3"
+     style="max-width:300px !important ;z-index: 2000;">
+        <div class="alert-heading d-flex justify-content-between align-items-center">
+            <a role="button" class="btn btn-close" data-bs-dismiss="alert"></a>
+            <p>Notification</p>
+        </div>
+        <hr class="m-0 p-0">
+        <div class="alert-body text-end overflow-auto p-2 text-center" style="max-height: 120px !important;">
+            <p class="text-break m-0">{{alert}}</p>
+            <p class="text-break m-0">{{ request.scheme }}://{{ request.get_host }}{% url 'linker:short_link_2_orginal' link %}</p>
+        </div>
+    </div>
+{% else %}
+
+{% endif %}
