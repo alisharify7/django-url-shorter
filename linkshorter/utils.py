@@ -1,9 +1,9 @@
 import random
 from string import ascii_letters, digits
-
 from .models import Urls
-all_valid_token_char = [ascii_letters+digits]
 
+
+all_valid_token_char = [ascii_letters+digits]
 def generate_unique_short_link():
     """
     This function generate unique short url for each link
